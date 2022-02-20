@@ -1,16 +1,22 @@
-# xpense
+<h1 align="center">
+    <b>Xpense<br></b>
+</h1>
+ <h3 align="center" style="border-bottom: none">
+    <b>💰 A cross-platform personal finance management tool. 💰<br></b>
+</h3>
 
-A new Flutter project.
+<p align="center">
+You are in charge of your data and customizations.
+</p>
 
-## Getting Started
+## Built With
 
-This project is a starting point for a Flutter application.
+* [Flutter](https://flutter.dev/)
 
-A few resources to get you started if this is your first Flutter project:
+## Contributing
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**. Please look at [CONTRIBUTING.md](https://github.com/DarhkVoyd/Xpense/blob/main/CONTRIBUTING.md) for details.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## License
+
+Distributed under the MIT License. See `LICENSE.md` for more information.
