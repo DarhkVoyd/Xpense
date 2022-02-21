@@ -8,7 +8,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 500,
       child: ListView.builder(
         itemCount: transactions.length,
         itemBuilder: (context, index) {
@@ -36,7 +36,7 @@ class TransactionList extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        transactions[index].amount.toString(),
+                        transactions[index].amount.toStringAsFixed(2),
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 17,
