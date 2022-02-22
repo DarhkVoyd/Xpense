@@ -41,15 +41,21 @@ class _MyHomePageState extends State<MyHomePage> {
     // ),
   ];
 
-  void newTransaction(String txTitle, double txAmount) {
+  void newTransaction(String txTitle, double txAmount, DateTime datePicked) {
     final newTx = Transaction(
       id: DateTime.now().toString(),
       title: txTitle,
       amount: txAmount,
-      date: DateTime.now(),
+      date: datePicked,
     );
     setState(() {
       transactions.add(newTx);
+    });
+  }
+
+  void deleteTransaction(String id) {
+    setState(() {
+      transactions.removeWhere((element) => element.id == id);
     });
   }
 
@@ -100,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Chart(recentTransactions),
               width: double.infinity,
             ),
-            TransactionList(transactions.reversed.toList()),
+            TransactionList(transactions.reversed.toList(), deleteTransaction),
           ],
         ),
       ),
