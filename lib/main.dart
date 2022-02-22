@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Chart(recentTransactions),
               width: double.infinity,
             ),
-            TransactionList(transactions),
+            TransactionList(transactions.reversed.toList()),
           ],
         ),
       ),
