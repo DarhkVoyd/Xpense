@@ -1,9 +1,10 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:Xpense/widgets/new_transaction.dart';
-import 'package:Xpense/widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
+
 import './widgets/new_transaction.dart';
+import './widgets/transaction_list.dart';
+import './widgets/chart.dart';
 import './models/transaction.dart';
 
 void main() => runApp(MyApp());
@@ -30,13 +31,13 @@ class _MyHomePageState extends State<MyHomePage> {
     //   id: 't1',
     //   title: 'New Shoes',
     //   amount: 79.99,
-    //   date: DateTime.now(),
+    //   date: DateTime.now().subtract(Duration(days: 3)),
     // ),
     // Transaction(
     //   id: 't2',
     //   title: 'Groceries',
     //   amount: 16.69,
-    //   date: DateTime.now(),
+    //   date: DateTime.now().subtract(Duration(days: 2)),
     // ),
   ];
 
@@ -64,6 +65,13 @@ class _MyHomePageState extends State<MyHomePage> {
         });
   }
 
+  List<Transaction> get recentTransactions {
+    return transactions
+        .where((element) =>
+            element.date.isAfter(DateTime.now().subtract(Duration(days: 7))))
+        .toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,17 +96,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Card(
-              child: Container(
-                child: Text(
-                  'Chart',
-                  textAlign: TextAlign.center,
-                ),
-                width: double.infinity,
-                height: 200,
-              ),
-              elevation: 20,
-              color: Colors.green,
+            Container(
+              child: Chart(recentTransactions),
+              width: double.infinity,
             ),
             TransactionList(transactions),
           ],
