@@ -16,7 +16,7 @@ class TransactionList extends StatelessWidget {
                 Container(
                     margin: EdgeInsets.all(30),
                     height: 150,
-                    child: Image.asset('assests/images/waiting.png',
+                    child: Image.asset('assets/images/waiting.png',
                         fit: BoxFit.cover)),
                 Text('No transactions added yet.'),
               ],

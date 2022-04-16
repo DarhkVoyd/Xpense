@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import 'chart_bar.dart';
 
 class Chart extends StatelessWidget {
-  var totalTotal = 0.0;
+  final totalTotal = 0.0;
   final List<Transaction> recentTransactions;
   Chart(this.recentTransactions);
   List<Map<String, Object>> get groupedTransactionsValues {
@@ -33,7 +33,6 @@ class Chart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(groupedTransactionsValues);
     return Card(
       margin: EdgeInsets.all(10),
       elevation: 20,
